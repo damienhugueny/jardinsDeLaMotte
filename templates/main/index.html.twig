@@ -1,0 +1,455 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jardins de la motte{% endblock %}
+
+{% block body %}
+
+    <section id="about" class="top-border-me">
+        <div class="section-inner">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb100">                        
+                        <h2 class="section-heading"><span class="theme-accent-color">Bienvenue </span>aux Jardins de la Motte</h2>
+                        <hr class="thin-hr">
+                        <h3 class="section-subheading secondary-font">Nous sommes ravis de vous accueillir</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-md-offset-1">
+                            <h2 class="">Boutique et <span class="theme-accent-color">Marchés</span></h2>
+                            <p class="lead">Afin d’assurer vos approvisionnements, la ferme de la Motte maintient ses ventes aux jours et horaires habituels.</p>
+                            <p>Pour les Creusotin, une Livraison de panier est organisée à l’épicerie « le pois gourmand ».</p>
+                            <p>Nous vous rappelons qu’afin de limiter votre temps de présence sur place et donc minimiser les contacts avec d’autres personnes, <strong>nous pouvons vous préparer vos paniers sur commandes</strong>, à retirer sur place lors des plages d’ouvertures.</p>
+                        </div>
+
+                        <div class="col-md-5 container_right_start">
+                            <p>Pour les personnes les plus fragiles, ou étant contraintes de rester chez elles, des livraisons à domicile pourront être assurées sur demande les mercredis et vendredis.</p>
+                            <p class="lead">Deux possibilités pour passer vos commandes:</p>
+                            <p>notre adresse mail : <a href="mailto:contact@jardinsdelamotte.fr">contact@jardinsdelamotte.fr</a></p>
+                            <p>notre messagerie vocale : <a href="tel:+33601922709">06 01 92 27 09</a></p>
+                            <p>Merci de passer vos commande au moins 24H à l’avance et d’être le plus clair et le plus précis possible dans la descriptions de votre demande.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 nopadding-lr dark-wrapper opaqued background-cover left-half" style="background-image: url('images/panier.jpg');">
+                <div class="dark-opaqued-half section-inner pad-sides-60 match-height" data-mh="promo-inner">
+                    <h3 class="mb50">Les <span class="theme-accent-color">paniers</span></h3>
+                    <p class="lead mb50">Retrouvez la liste de nos produits sur notre site www.jardinsdelamotte.fr, envoyez nous un mail pour passer votre commande (au moins 24H à l’avance),
+                         c’est vous qui composez votre panier. Vous choisissez votre jours de retrait en fonction des horaires d’ouverture. Si vous souhaitez éviter les contacts, vous pourrez
+                         payer par virement en récupérant notre RIB sur le site internet.</p>
+                         <p class="lead mb50">Ces derniers jours nous devons faire face à un afflux massif de commandes de paniers. Nous mettons tout 
+                            en oeuvre pour vous satisfaire. Toutefois, il se peut que, selon les disponibilités, votre panier ne contienne 
+                            pas précisément ce que vous avez demandé.
+                            Nous travaillons avec la nature qui impose ses quantités…</p>
+      
+                    <p class="mt30"><a href="#the-menu" class="btn btn-primary btn-white page-scroll">Voir les produits</a></p>
+                </div>
+            </div>
+
+            <div class="col-sm-6 nopadding-lr dark-wrapper opaqued background-cover right-half" style="background-image: url('images/salade.jpg');">
+                <div class="dark-opaqued-half section-inner pad-sides-60 match-height text-right" data-mh="promo-inner">
+                    <h3 class="mb50">La libre <span class="theme-accent-color">cueillette</span></h3>
+                    <p class="lead mb50">La libre cueillette est l’occasion pour tous de profiter des bienfaits de la nature et de s’assurer de la qualité, de la fraicheur et de l’origine des produits.</p>
+                    <p class="lead mb50">Le jardin est ouvert à tous les visiteurs. Un affichage vous permet de connaitre les produits à récolter et les zones de récolte. A l’accueil, vous pourrez trouver brouettes, seaux, couteaux et sécateurs pour vous aider dans votre cueillette. Une fois outillé, vous pourrez parcourir le jardin et cueillir ce que bon vous semble dans les endroits ouverts à la cueillette. Vous n’aurez ensuite qu’à passer à la caisse ou tous vos produits seront pesés (pensez à faire tarer vos paniers et récipients à votre arrivée) et facturés aux prix affichés.</p>
+                    <p class="lead mb50">Certain produits dont la cueillette est délicate seront ramassés pour vous et proposés en vente à la caisse.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="dark-wrapper top-border-me opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg4.jpg" data-speed="0.8">
+        <div class="section-inner">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb100">                        
+                        <h2 class="section-heading">Les <span class="theme-accent-color">Marchés</span></h2>
+                        <hr class="thin-hr">
+                        <h3 class="section-subheading secondary-font">Venez nous rencontrer</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wow fadeIn" data-wow-delay="0.2s">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12" role="tabpanel">
+                            <div class="text-center">
+
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-justified icon-tabs" id="nav-tabs" role="tablist">
+
+                                {% for market in markets %}
+                                    <li role="presentation" class="{{ market.id == 1 ? 'active' }}">
+                                        <a href="#market{{market.id}}" aria-controls="market{{market.id}}" role="tab" data-toggle="tab">
+                                            <span class="tabtitle heading-font">{{market.place}}</span>                                                
+                                            <span class="tabtitle small"><p class="lead">{{market.day}}.</p></span>
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="mt60">
+                                <!-- Tab panes -->
+                                <div class="tab-content" id="tabs-collapse">   
+                                    {% for market in markets %}
+                                    <div role="tabpanel" class="tab-pane fade in {{ market.id == 1 ? 'active' }}" id="market{{market.id}}">
+                                        <div class="tab-inner">                    
+                                            <h2 class="secondary-font mb30">{{market.slogan}}</h2>  
+                                            <p>{{market.text}}</p>         
+                                        </div>
+                                    </div>
+                                       {% endfor %}
+                                </div>
+                            </div> 
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Section PRODUCTS -->
+    <section id="the-menu">
+        <div class="section-inner">
+
+                <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb100">
+                        <h2 class="section-heading">nos <span class="theme-accent-color">Produits</span></h2>
+                        <hr class="thin-hr">
+                        <h3 class="section-subheading secondary-font"> issus de l’agriculture biologique.</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+
+                {% for origin in origins %}
+                <div class="row product mb100">
+
+                    <h2 class="title_bg">{{ origin.name }}</h2>
+
+                    {% for product_category in product_categorys %}
+                     {% for productCategoryOrigin in product_category.origins %}
+
+                        {% if productCategoryOrigin.id == origin.id%}
+                        <div class="col-md-4 wow fadeIn">
+
+                       
+                        <h3 class="mb50"><span class="heading-font text-uppercase">{{ product_category.name }}</span></h3>
+                        
+                        {% for product in products %}
+
+                        {% if product.productCategory.getId == product_category.id and product.origin.getId == origin.id %}
+                        <h3>
+                        <p><i class="fa fa-arrow-right"></i> {{ product.name }} <span class="theme-accent-beige">{{ product.price }}&euro;/{{ product.unite }}</span></p>
+                        </h3>
+                        
+                        {% endif %}
+                        {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endfor %}
+                </div>
+                {% endfor %}
+
+
+                <div class="row product mb100">
+
+                    <h2 class="title_bg">Nos coordonnées bancaires</h2>
+
+                    <div class="col-md-12 wow fadeIn">
+
+                     <h3 class="mb50"><span class="heading-font text-uppercase">Afin de mieux répondre à vos demandes voici nos coordonnées bancaires</span></h3>
+
+                    <h3>
+                    <p>Titulaire : EARL Ferme de la Motte</br>IBAN : FR76 1080 7004 6882 4210 6015 178</p>
+                    </h3>
+                    </div>
+                  
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+<!-- Section Plants Potagers -->
+    <section id="the-potager">
+        <div class="section-inner">
+
+                <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb100">
+                        <h2 class="section-heading">nos <span class="theme-accent-color">Plants</span> potagers</h2>
+                        <hr class="thin-hr">
+                        <h3 class="section-subheading secondary-font">Comme chaque année, nous vous proposons une liste de plants potagers pour vos jardins.</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+
+                <div class="row mb100">
+
+                    {% for plant_type in plant_types %}
+
+                    <div class="col-md-4 wow fadeIn">
+                    <h2 class="mb50 under_line"><span class="heading-font title_bg text-uppercase">{{ plant_type.name }}</span></h2>
+
+                    {% for plant_category in plant_categorys %}
+
+                    {% if plant_category.PlantType.getId == plant_type.id  %}
+                    <h3 class="theme-accent-color">{{ plant_category.name }}<h3>
+
+                    {% for plant in plants %}
+                    {% if plant.PlantCategory.getId == plant_category.id %}
+                    <p><i class="fa fa-arrow-right"></i> {{ plant.name }} <span class="theme-accent-beige">{{ plant.price }} &euro;/{{ plant.unite }}</span></p>
+                    {% endif %}
+                    {% endfor %}
+
+                    {% endif %}
+                    {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Section Plants Potagers -->
+
+    <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="assets/img/bg/bg10.jpg" data-speed="0.8">
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center mb100">
+                        <h2 class="section-heading">La <span class="theme-accent-color">Famille</span> Chevalier</h2>
+                        <hr class="thin-hr">
+                        <h3 class="section-subheading secondary-font">Satisfaction, everytime.</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="1" data-items-desktop="[1200,1]" data-items-desktop-small="[980,1]" data-items-tablet="[768,1]" data-items-mobile="[479,1]">
+                            <li>
+                                <div class="row">
+                                    <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <img src="assets/img/team/small1.jpg" class="img-responsive testimonial-author" alt="">
+                                            </div>
+                                            <div class="col-sm-10">                                                
+                                                <h4>Adrien</h4>
+                                                <p>C’est le responsable de l’exploitation. A 30 ans, il décide de 
+                                                    changer de vie et de reprendre l’exploitation familiale. Professeur 
+                                                    d’EPS depuis 10 ans, il obtient un BTS production horticole en 2011 
+                                                    qui l’amène à s’installer en tant que jeune agriculteur en février 
+                                                    2012. S’il s’installe sur l’exploitation familiale il y bouleverse 
+                                                    les habitudes en réorientant complétement la production. Les terres 
+                                                    de la Motte n’accueilleront plus de charollaise mais toute une 
+                                                    diversité de produits maraichers !</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="row">
+                                    <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <img src="assets/img/team/small1.jpg" class="img-responsive testimonial-author" alt="">
+                                            </div>
+                                            <div class="col-sm-10">                                                
+                                                <h4>Audrey</h4>
+                                                <p>C’est la femme d’Adrien. Elle travaille à l’extérieur de l’exploitation. 
+                                                    Il n’est pas rare de la voir dans les allées pour semer ou désherber.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                              <li>
+                                <div class="row">
+                                    <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <img src="assets/img/team/small1.jpg" class="img-responsive testimonial-author" alt="">
+                                            </div>
+                                            <div class="col-sm-10">                                                
+                                                <h4>Lily & Antonin</h4>
+                                                <p>Pas mécontent de participer à l’aventure de leurs parents. Voilà de jeunes 
+                                                    jardiniers en herbe. Quatre petites mains déjà bien habiles dans l’art de 
+                                                    semer les graines !</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                              <li>
+                                <div class="row">
+                                    <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <img src="assets/img/team/small1.jpg" class="img-responsive testimonial-author" alt="">
+                                            </div>
+                                            <div class="col-sm-10">                                                
+                                                <h4>Margot</h4>
+                                                <p>La petite dernière mais qui tient un rôle important. En effet elle a la lourde 
+                                                    tâche de déguster en avant premières les produits du jardin dans de délicieuses 
+                                                    purées et compotes préparées par maman.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                              <li>
+                                <div class="row">
+                                    <div class="col-xs-8 col-xs-offset-2 item-caption">
+                                        <div class="row">
+                                            <div class="col-sm-2">
+                                                <img src="assets/img/team/small1.jpg" class="img-responsive testimonial-author" alt="">
+                                            </div>
+                                            <div class="col-sm-10">                                                
+                                                <h4>Gaïa</h4>
+                                                <p>vagabonde, elle est passée maîtresse dans l’art de débusquer mulots et taupes qui 
+                                                    partagent le jardin.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div id="map"></div>
+    </section>
+
+
+    <section id="contact" class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="#" data-speed="0.8">
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    <div>
+                </div>
+                <div class="container">
+                    <div class="row mb100"> 
+                        <!-- Address, Phone & Email -->
+                        <div class="col-md-5 col-md-offset-1 wow fadeIn">
+                            <h3 class="mb30">Adresse</h3>
+                            <p class="lead">Jardins de la Motte</p>
+                            <p class="lead">Motte Loisy<br>
+                            71300 Saint Berain Sous Sanvignes</p>
+                            <p class="lead"><a href="tel:+33601922709">06 01 92 27 09</a><br>
+                            <p class="lead"><a href="mailto:contact@jardinsdelamotte.fr">contact@jardinsdelamotte.fr</a><br>
+                        </div>
+
+                        <div class="col-md-5 col-sm-7 wow fadeIn">
+                            <h3 class="mb30">Horaires</h3>
+                            <div class="row">
+                                <div class="col-xs-5">
+                                <ul class="list-unstyled weekdays">
+                                {% for hourly in hourlys %}
+                                    <li>{{hourly.day}}</li>
+                                 {% endfor %} 
+                                </ul>
+                                </div>
+                                <div class="col-xs-7">
+                                <ul class="list-unstyled">
+                                 {% for hourly in hourlys %}
+                                    <li>{{hourly.time}}</li>
+                                {% endfor %}
+                                </ul>
+                                </div>
+                            </div>
+                        </div>                
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div class="row">
+                                <div id="message" class="col-md-12"></div>
+                                <form method="post" action="sendemail.php" id="contactform" class="form-group main-contact-form col-md-12 wow fadeIn" data-wow-delay="0.2s">
+                                    <input type="text" class="form-control col-md-4" name="name" placeholder="NOM" id="name" required data-validation-required-message="Please enter your name." />
+                                    <input type="text" class="form-control col-md-4" name="email" placeholder="Votre Email" id="email" required data-validation-required-message="Please enter your email address." />
+                                    <textarea name="comments" class="form-control" id="comments" placeholder="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <input class="btn btn-primary btn-white mt30 pull-right" type="submit" name="submit" value="Envoyer" />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+       
+        </section>
+
+        <footer class="white-wrapper">
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <div class="col-md-12 wow fadeIn mb30" data-wow-delay="0.2s">
+                        <span class="copyright">Jardins de la motte | Copyright 2020</span>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="list-inline social-links wow fadeIn" data-wow-delay="0.2s">
+                            <li>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-behance"></i></a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+    <a href="#" id="back-to-top"><i class="fa fa-long-arrow-up"></i></a>
+
+{% endblock %}

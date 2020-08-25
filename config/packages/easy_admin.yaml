@@ -1,0 +1,27 @@
+easy_admin:
+   design:
+        brand_color: '#bfcd5b'
+        menu:
+            - { label: 'Plant' }
+            - { entity: 'Plant', label: 'Plant' }
+            - { entity: 'PlantCategory', label: 'Catégorie' }
+            - { entity: 'PlantType', label: 'famille' }
+            - { label: 'Produit' }
+            - { entity: 'Product', icon: 'file-list',label: 'Produit', params: { sortField: 'name', sortDirection: 'ASC' } }
+            - { entity: 'ProductCategory', label: 'Catégorie' }
+            - { entity: 'Origin', label: 'Provenance' }
+            - { label: 'Marché' }
+            - { entity: 'Market', label: 'Les Marchés' }
+            - { label: 'Horaire' }
+            - { entity: 'Hourly', label: 'Horaire de la boutique',params: { sortField: 'id', sortDirection: 'ASC' } }
+
+   entities:
+       # List the entity class name you want to manage
+        - App\Entity\Plant
+        - App\Entity\PlantCategory
+        - App\Entity\PlantType
+        - App\Entity\Product
+        - App\Entity\ProductCategory
+        - App\Entity\Origin
+        - App\Entity\Market
+        - App\Entity\Hourly
